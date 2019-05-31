@@ -2,7 +2,7 @@ from nltk import WordNetLemmatizer
 import utils
 import re
 
-pathFile = 'sentences.txt'
+pathFile = 'asset\sentences.txt'
 lemmatizer = WordNetLemmatizer()
 
 with open(pathFile) as file:
