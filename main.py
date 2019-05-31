@@ -14,11 +14,10 @@ with open(pathFile) as file:
         best_sense = utils.find_synset(context, word)
 
         synonyms = best_sense.lemma_names()
-        for synonym in synonyms:
-            if synonym != word:
-                newLine = line.replace(word, synonym)
-                print(line + "   " + best_sense.definition() + "\n       " + newLine)
-                break
+        print(str(best_sense.offset()) + "    " + best_sense.definition())
 
-        if len(synonyms) == 1:
-            print(line + "   " + best_sense.definition() + "\n")
+        for synonym in synonyms:
+            newLine = line.replace(word, synonym)
+            print(newLine[:-1])
+
+        print()
